@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://drc5p6nh37efe"]
+
+[ext_resource type="Script" uid="uid://chgpha0j6hu2j" path="res://scenes/stone/stone.gd" id="1_47p22"]
+[ext_resource type="Texture2D" uid="uid://buk2ty1ydh33a" path="res://assets/Stone.png" id="1_uoq2b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uoq2b"]
+
+[node name="Stone" type="Area2D" unique_id=1396716879]
+script = ExtResource("1_47p22")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1679546785]
+position = Vector2(0, -5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_uoq2b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=533753601]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_uoq2b")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1802796925]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

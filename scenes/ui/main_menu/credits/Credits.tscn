@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dkuqbiyccphga"]
+
+[ext_resource type="Script" uid="uid://3yn7ftk8os32" path="res://scenes/ui/main_menu/credits/credits.gd" id="1_2q2oy"]
+[ext_resource type="FontFile" uid="uid://cbsy1kd2n7qwv" path="res://assets/arcadeclassic/ARCADECLASSIC.TTF" id="1_qyedr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypnre"]
+bg_color = Color(0.24300002, 0.57375014, 0.81, 0.6745098)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Credits" type="Control" unique_id=843662522]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2q2oy")
+
+[node name="Background" type="Panel" parent="." unique_id=665434606]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = -178.0
+offset_right = 178.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ypnre")
+
+[node name="BoxContainer" type="BoxContainer" parent="Background" unique_id=2016212961]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 16.0
+offset_top = 20.0
+offset_right = -16.0
+offset_bottom = 58.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/BoxContainer" unique_id=346699717]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Back" type="Button" parent="Background/BoxContainer/HBoxContainer" unique_id=1055637618]
+custom_minimum_size = Vector2(45, 20)
+layout_mode = 2
+text = "<-"
+
+[node name="Label" type="Label" parent="Background/BoxContainer/HBoxContainer" unique_id=797580017]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_qyedr")
+theme_override_font_sizes/font_size = 36
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="body" type="BoxContainer" parent="." unique_id=861838966]
+layout_mode = 0
+offset_left = -190.0
+offset_top = -96.0
+offset_right = 162.0
+offset_bottom = 160.0
+
+[node name="RichTextLabel" type="Label" parent="body" unique_id=1585522997]
+layout_mode = 2
+size_flags_vertical = 0
+text = "By Blauhschwert"
+
+[connection signal="pressed" from="Background/BoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]

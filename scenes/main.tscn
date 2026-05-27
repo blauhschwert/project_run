@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://duocpgia0bd0x"]
+
+[ext_resource type="PackedScene" uid="uid://c4hjn1o1c5mfa" path="res://scenes/ui/main_menu.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://m82q0ileap0m" path="res://scenes/world/world.tscn" id="2_0wfyh"]
+
+[node name="Main" type="Node" unique_id=1464486904]
+
+[node name="MainMenu" parent="." unique_id=728898852 instance=ExtResource("1_o5qli")]
+
+[node name="World" parent="." unique_id=1211907454 instance=ExtResource("2_0wfyh")]
+modulate = Color(1, 1, 1, 0.7921569)

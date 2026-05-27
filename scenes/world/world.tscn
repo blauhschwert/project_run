@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://m82q0ileap0m"]
+
+[ext_resource type="Script" uid="uid://box56d1gf4k03" path="res://scenes/world/world.gd" id="1_1fp7r"]
+[ext_resource type="Texture2D" uid="uid://bvcfw543xaob7" path="res://assets/PlainA.png" id="1_dphjl"]
+[ext_resource type="PackedScene" uid="uid://chud2k1hh8la8" path="res://scenes/player/player.tscn" id="2_sl2e5"]
+[ext_resource type="PackedScene" uid="uid://10q78f1bo6a5" path="res://scenes/ui/game_ui/game_ui.tscn" id="4_6m72w"]
+
+[node name="World" type="Node2D" unique_id=1211907454]
+script = ExtResource("1_1fp7r")
+
+[node name="GameUI" type="CanvasLayer" parent="." unique_id=1600440636]
+
+[node name="GameUI" parent="GameUI" unique_id=1042750320 instance=ExtResource("4_6m72w")]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1976753598]
+texture_filter = 1
+position = Vector2(268, 479.99997)
+scale = Vector2(0.8375, 1.9999999)
+texture = ExtResource("1_dphjl")
+
+[node name="Player" parent="." unique_id=1291215064 instance=ExtResource("2_sl2e5")]
+position = Vector2(280, 912)
+scale = Vector2(4, 4)
+
+[node name="LanePositions" type="Node2D" parent="." unique_id=1562622195]
+
+[node name="Left" type="Marker2D" parent="LanePositions" unique_id=154755331]
+position = Vector2(192, 896)
+
+[node name="Middle" type="Marker2D" parent="LanePositions" unique_id=113880334]
+position = Vector2(280, 896)
+
+[node name="Right" type="Marker2D" parent="LanePositions" unique_id=1186997091]
+position = Vector2(384, 896)
+
+[node name="EntitySpawn" type="Marker2D" parent="." unique_id=610245451]
+position = Vector2(272, 536)
+
+[node name="EntityEnds" type="Node2D" parent="." unique_id=1954198188]
+
+[node name="RightEnd" type="Marker2D" parent="EntityEnds" unique_id=420233752]
+position = Vector2(424, 1024)
+
+[node name="MiddleEnd" type="Marker2D" parent="EntityEnds" unique_id=110818587]
+position = Vector2(272, 1024)
+
+[node name="LeftEnd" type="Marker2D" parent="EntityEnds" unique_id=960839102]
+position = Vector2(144, 1024)
+
+[node name="EntityTimer" type="Timer" parent="." unique_id=1463974261]
+one_shot = true
+autostart = true
+
+[connection signal="change_lane" from="Player" to="." method="_on_player_change_lane"]
+[connection signal="timeout" from="EntityTimer" to="." method="_on_entity_timer_timeout"]

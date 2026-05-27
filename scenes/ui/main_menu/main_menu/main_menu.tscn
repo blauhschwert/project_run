@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bgv2e7ymykovv"]
+
+[ext_resource type="Theme" uid="uid://cnuo8xc644x4m" path="res://scenes/ui/themes/base_theme.tres" id="1_uaf6o"]
+[ext_resource type="Script" uid="uid://cpl0ljkgsu1jj" path="res://scenes/ui/main_menu/main_menu/main_menu.gd" id="1_w0wvw"]
+[ext_resource type="PackedScene" uid="uid://djymboaf2e7jb" path="res://scenes/ui/main_menu/title_screen/title_screen_main.tscn" id="2_w0wvw"]
+[ext_resource type="PackedScene" uid="uid://dwcfsgxjmyuyd" path="res://scenes/ui/main_menu/option/options.tscn" id="3_fswdd"]
+[ext_resource type="PackedScene" uid="uid://dkuqbiyccphga" path="res://scenes/ui/main_menu/credits/Credits.tscn" id="5_fswdd"]
+
+[node name="MainMenu" type="Control" unique_id=655084936]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_uaf6o")
+script = ExtResource("1_w0wvw")
+
+[node name="TitleScreenMain" parent="." unique_id=245333363 instance=ExtResource("2_w0wvw")]
+z_index = 1
+layout_mode = 1
+
+[node name="Options" parent="." unique_id=56698853 instance=ExtResource("3_fswdd")]
+visible = false
+layout_mode = 1
+
+[node name="Credits" parent="." unique_id=843662522 instance=ExtResource("5_fswdd")]
+visible = false
+layout_mode = 1
+
+[connection signal="hide_title_screen" from="TitleScreenMain" to="." method="_on_title_screen_main_hide_title_screen"]
+[connection signal="open_credits" from="TitleScreenMain" to="." method="_on_title_screen_main_open_credits"]
+[connection signal="open_options" from="TitleScreenMain" to="." method="_on_title_screen_main_open_options"]
+[connection signal="play_game" from="TitleScreenMain" to="." method="_on_title_screen_main_play_game"]
+[connection signal="close_options" from="Options" to="." method="_on_options_close_options"]
+[connection signal="close_credits" from="Credits" to="." method="_on_credits_close_credits"]

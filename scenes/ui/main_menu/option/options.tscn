@@ -1,0 +1,280 @@
+[gd_scene format=3 uid="uid://dwcfsgxjmyuyd"]
+
+[ext_resource type="Script" uid="uid://nxnkywtehskt" path="res://scenes/ui/main_menu/option/options.gd" id="1_2tkqg"]
+[ext_resource type="FontFile" uid="uid://cbsy1kd2n7qwv" path="res://assets/arcadeclassic/ARCADECLASSIC.TTF" id="1_lsmhi"]
+[ext_resource type="Script" uid="uid://c6sw5fymstr4d" path="res://scenes/ui/main_menu/audio_control.gd" id="2_2tkqg"]
+[ext_resource type="Script" uid="uid://sk6f1xmbod1k" path="res://scenes/ui/main_menu/check_button.gd" id="3_o2ce2"]
+[ext_resource type="Script" uid="uid://dueqrekk36sqw" path="res://scenes/ui/main_menu/scale_control.gd" id="4_lkrqj"]
+[ext_resource type="Script" uid="uid://b8pcysqneogb2" path="res://scenes/ui/main_menu/language.gd" id="6_o2ce2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tkqg"]
+bg_color = Color(0.14999999, 0.41000006, 0.75, 0.6745098)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lsmhi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsmhi"]
+bg_color = Color(0.08627451, 0.6, 0.6, 1)
+skew = Vector2(0.3, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52x6y"]
+bg_color = Color(0.21360001, 0.85618, 0.89, 1)
+skew = Vector2(0.5, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_cmwxi"]
+color = Color(0.19, 0.112100005, 0.0342, 1)
+thickness = 7
+
+[node name="Options" type="Control" unique_id=56698853]
+layout_mode = 3
+anchor_left = 0.119
+anchor_top = 0.342
+anchor_right = 0.84400004
+anchor_bottom = 0.8
+offset_left = -32.260002
+offset_top = -16.320007
+offset_right = 0.23999023
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2tkqg")
+
+[node name="OptionsPanel" type="Panel" parent="." unique_id=47195785]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.094000004
+anchor_top = 0.018000001
+anchor_right = 0.98100007
+anchor_bottom = 1.0
+offset_left = -7.856003
+offset_top = -0.20800018
+offset_right = 0.05596924
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2tkqg")
+
+[node name="BoxContainer" type="BoxContainer" parent="OptionsPanel" unique_id=1032078309]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057000004
+anchor_top = 0.036000002
+anchor_right = 0.93700004
+anchor_bottom = 0.28
+offset_left = 2.1119957
+offset_top = 4.3360004
+offset_right = 0.19198608
+offset_bottom = 0.055999756
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsPanel/BoxContainer" unique_id=380820642]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Back" type="Button" parent="OptionsPanel/BoxContainer/HBoxContainer" unique_id=1084645980]
+custom_minimum_size = Vector2(45, 20)
+layout_mode = 2
+text = "<-"
+
+[node name="Label" type="Label" parent="OptionsPanel/BoxContainer/HBoxContainer" unique_id=629836049]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_lsmhi")
+theme_override_font_sizes/font_size = 36
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="OptionsPanel" unique_id=1462219859]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 88.0
+offset_right = 376.0
+offset_bottom = 104.0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_lsmhi")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="OptionsPanel" unique_id=984843805]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -344.0
+offset_right = -16.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+dragging_enabled = false
+dragger_visibility = 1
+
+[node name="OptionName" type="VBoxContainer" parent="OptionsPanel/HSplitContainer" unique_id=855708356]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="Name" type="Panel" parent="OptionsPanel/HSplitContainer/OptionName" unique_id=1622776035]
+custom_minimum_size = Vector2(105, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="OptionsPanel/HSplitContainer/OptionName/Name" unique_id=811751477]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.5
+offset_top = -13.0
+offset_right = 52.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_lsmhi")
+theme_override_font_sizes/font_size = 16
+text = "Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name2" type="Panel" parent="OptionsPanel/HSplitContainer/OptionName" unique_id=1173352074]
+custom_minimum_size = Vector2(105, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="OptionsPanel/HSplitContainer/OptionName/Name2" unique_id=2109940978]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.5
+offset_top = -11.0
+offset_right = 52.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_lsmhi")
+theme_override_font_sizes/font_size = 16
+text = "FullScreen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name3" type="Panel" parent="OptionsPanel/HSplitContainer/OptionName" unique_id=1409580730]
+custom_minimum_size = Vector2(105, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="OptionsPanel/HSplitContainer/OptionName/Name3" unique_id=1167533396]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.5
+offset_top = -15.0
+offset_right = 52.5
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_lsmhi")
+theme_override_font_sizes/font_size = 16
+text = "Screen
+Resolution"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name4" type="Panel" parent="OptionsPanel/HSplitContainer/OptionName" unique_id=1429846460]
+custom_minimum_size = Vector2(105, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="OptionsPanel/HSplitContainer/OptionName/Name4" unique_id=135901612]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.5
+offset_top = -15.0
+offset_right = 52.5
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_lsmhi")
+theme_override_font_sizes/font_size = 16
+text = "Language"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionControl" type="VBoxContainer" parent="OptionsPanel/HSplitContainer" unique_id=330629750]
+custom_minimum_size = Vector2(205, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="AudioControl" type="HSlider" parent="OptionsPanel/HSplitContainer/OptionControl" unique_id=1297285487]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_lsmhi")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_52x6y")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_cmwxi")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("2_2tkqg")
+audio_bus_name = "Music"
+
+[node name="CheckButton" type="CheckButton" parent="OptionsPanel/HSplitContainer/OptionControl" unique_id=1783007619]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+script = ExtResource("3_o2ce2")
+
+[node name="ScaleControl" type="OptionButton" parent="OptionsPanel/HSplitContainer/OptionControl" unique_id=1391753144]
+layout_mode = 2
+size_flags_vertical = 2
+alignment = 1
+selected = 0
+item_count = 4
+popup/item_0/text = "100%"
+popup/item_0/id = 0
+popup/item_1/text = "75%"
+popup/item_1/id = 1
+popup/item_2/text = "50%"
+popup/item_2/id = 2
+popup/item_3/text = "25%"
+popup/item_3/id = 3
+script = ExtResource("4_lkrqj")
+
+[node name="Langugae" type="OptionButton" parent="OptionsPanel/HSplitContainer/OptionControl" unique_id=853155874]
+layout_mode = 2
+size_flags_vertical = 2
+alignment = 1
+script = ExtResource("6_o2ce2")
+
+[connection signal="pressed" from="OptionsPanel/BoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="OptionsPanel/HSplitContainer/OptionControl/AudioControl" to="OptionsPanel/HSplitContainer/OptionControl/AudioControl" method="_on_value_changed"]
+[connection signal="toggled" from="OptionsPanel/HSplitContainer/OptionControl/CheckButton" to="OptionsPanel/HSplitContainer/OptionControl/CheckButton" method="_on_toggled"]
+[connection signal="item_selected" from="OptionsPanel/HSplitContainer/OptionControl/ScaleControl" to="OptionsPanel/HSplitContainer/OptionControl/ScaleControl" method="_on_item_selected"]
+[connection signal="item_selected" from="OptionsPanel/HSplitContainer/OptionControl/Langugae" to="OptionsPanel/HSplitContainer/OptionControl/Langugae" method="_on_item_selected"]
