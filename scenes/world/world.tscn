@@ -12,6 +12,8 @@ script = ExtResource("1_1fp7r")
 
 [node name="GameUI" parent="GameUI" unique_id=1042750320 instance=ExtResource("4_6m72w")]
 
+[node name="GameOverScreen" type="CanvasLayer" parent="." unique_id=410194462]
+
 [node name="Background" type="Sprite2D" parent="." unique_id=1976753598]
 texture_filter = 1
 position = Vector2(268, 479.99997)
@@ -48,8 +50,9 @@ position = Vector2(272, 1024)
 position = Vector2(144, 1024)
 
 [node name="EntityTimer" type="Timer" parent="." unique_id=1463974261]
-one_shot = true
 autostart = true
 
+[connection signal="change_game_score" from="." to="GameUI/GameUI" method="_on_world_change_game_score"]
 [connection signal="change_lane" from="Player" to="." method="_on_player_change_lane"]
+[connection signal="player_hit" from="Player" to="." method="_on_player_player_hit"]
 [connection signal="timeout" from="EntityTimer" to="." method="_on_entity_timer_timeout"]

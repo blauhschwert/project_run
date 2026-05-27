@@ -16,3 +16,7 @@ func _process(_delta: float) -> void:
 
 func _update_game_score() -> void:
 	game_score_label.text = str(game_score).pad_zeros(7)
+
+
+func _on_world_change_game_score(amount: Variant) -> void:
+	game_score = amount
