@@ -2,6 +2,12 @@
 
 A simple endless runner game example built with Godot.
 
+=====
+
+<center><b><i>"On my social media profiles, I am a "Tsuna" or Sun God Nika[xyz]. In my mind, I am a little bit confused. But in my heart, I am a nerd that works for living to get again to the cinema and show those that needs us how to care for them"</i></b></center>
+
+=====
+
 ## Features
 
 - Compact Endless Runner
@@ -19,3 +25,13 @@ A simple endless runner game example built with Godot.
 | Move Right | D / Right Arrow |
 |------|
 
+
+## Assets or Resourcess
+
+background : https://gif-superretroworld.itch.io/battler-pack
+
+charackters : https://gif-superretroworld.itch.io/character-pack
+
+food icons : https://henrysoftware.itch.io/pixel-food
+
+font : https://www.dafont.com/arcade-classic-2.font

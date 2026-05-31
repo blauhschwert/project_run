@@ -65,14 +65,19 @@ func _input(_event: InputEvent) -> void:
 func _physics_process(_delta: float) -> void:
 	match play_state:
 		PlayerStates.PLAY:
-			pass
+			set_process_input(true)
+			$AnimationPlayer.play("walk")
 		PlayerStates.BREAK:
-			$AnimationPlayer.pause()
+			_player_break()
 		PlayerStates.GAME_OVER:
 			_game_over()
 
 func chnage_play_state(p_state : PlayerStates) -> void:
 	play_state = p_state
+
+func _player_break() -> void:
+	set_process_input(false)
+	$AnimationPlayer.pause()
 
 func _game_over() -> void:
 	set_process_input(false)

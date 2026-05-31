@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://gtb3cx0pnyeo"]
+
+[ext_resource type="PackedScene" uid="uid://djymboaf2e7jb" path="res://scenes/ui/game_break/buttons/game_break_buttons.tscn" id="1_puhvj"]
+
+[node name="GameBreakLayer" type="CanvasLayer" unique_id=383028189]
+
+[node name="Menu" type="Control" parent="." unique_id=1597644313]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu" unique_id=212916302]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -198.0
+offset_right = 168.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameBreakButtons" parent="Menu/VBoxContainer" unique_id=245333363 instance=ExtResource("1_puhvj")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[editable path="Menu/VBoxContainer/GameBreakButtons"]

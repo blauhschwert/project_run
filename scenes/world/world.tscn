@@ -3,16 +3,66 @@
 [ext_resource type="Script" uid="uid://box56d1gf4k03" path="res://scenes/world/world.gd" id="1_1fp7r"]
 [ext_resource type="Texture2D" uid="uid://bvcfw543xaob7" path="res://assets/PlainA.png" id="1_dphjl"]
 [ext_resource type="PackedScene" uid="uid://chud2k1hh8la8" path="res://scenes/player/player.tscn" id="2_sl2e5"]
+[ext_resource type="FontFile" uid="uid://cbsy1kd2n7qwv" path="res://assets/arcadeclassic/ARCADECLASSIC.TTF" id="3_v5dby"]
 [ext_resource type="PackedScene" uid="uid://10q78f1bo6a5" path="res://scenes/ui/game_ui/game_ui.tscn" id="4_6m72w"]
 
 [node name="World" type="Node2D" unique_id=1211907454]
 script = ExtResource("1_1fp7r")
 
 [node name="GameUI" type="CanvasLayer" parent="." unique_id=1600440636]
+visible = false
 
 [node name="GameUI" parent="GameUI" unique_id=1042750320 instance=ExtResource("4_6m72w")]
 
 [node name="GameOverScreen" type="CanvasLayer" parent="." unique_id=410194462]
+visible = false
+
+[node name="GameOverPanel" type="Panel" parent="GameOverScreen" unique_id=612558239]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.5
+offset_top = -181.5
+offset_right = 181.5
+offset_bottom = 181.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GameOverScreen/GameOverPanel" unique_id=337099847]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -144.0
+offset_top = 40.5
+offset_right = 146.0
+offset_bottom = 105.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_v5dby")
+theme_override_font_sizes/font_size = 64
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="GameOverScreen/GameOverPanel" unique_id=1258124361]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -141.0
+offset_top = 118.5
+offset_right = 149.0
+offset_bottom = 342.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_v5dby")
+theme_override_font_sizes/font_size = 64
+text = "Score:
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1976753598]
 texture_filter = 1
@@ -50,6 +100,7 @@ position = Vector2(272, 1024)
 position = Vector2(144, 1024)
 
 [node name="EntityTimer" type="Timer" parent="." unique_id=1463974261]
+wait_time = 1.2
 autostart = true
 
 [connection signal="change_game_score" from="." to="GameUI/GameUI" method="_on_world_change_game_score"]

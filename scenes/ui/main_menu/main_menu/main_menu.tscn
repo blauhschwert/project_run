@@ -2,8 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://cnuo8xc644x4m" path="res://scenes/ui/themes/base_theme.tres" id="1_uaf6o"]
 [ext_resource type="Script" uid="uid://cpl0ljkgsu1jj" path="res://scenes/ui/main_menu/main_menu/main_menu.gd" id="1_w0wvw"]
-[ext_resource type="PackedScene" uid="uid://djymboaf2e7jb" path="res://scenes/ui/main_menu/title_screen/title_screen_main.tscn" id="2_w0wvw"]
+[ext_resource type="PackedScene" uid="uid://ivwn43i5bm6x" path="res://scenes/ui/main_menu/title_screen/title_screen_main.tscn" id="2_w0wvw"]
 [ext_resource type="PackedScene" uid="uid://dwcfsgxjmyuyd" path="res://scenes/ui/main_menu/option/options.tscn" id="3_fswdd"]
+[ext_resource type="Script" uid="uid://0g1ky1uln8i7" path="res://scenes/ui/main_menu/title_screen/title_screen_buttons.gd" id="4_w0d8s"]
 [ext_resource type="PackedScene" uid="uid://dkuqbiyccphga" path="res://scenes/ui/main_menu/credits/Credits.tscn" id="5_fswdd"]
 
 [node name="MainMenu" type="Control" unique_id=655084936]
@@ -16,9 +17,9 @@ grow_vertical = 2
 theme = ExtResource("1_uaf6o")
 script = ExtResource("1_w0wvw")
 
-[node name="TitleScreenMain" parent="." unique_id=245333363 instance=ExtResource("2_w0wvw")]
-z_index = 1
+[node name="TitleScreenButtons" parent="." unique_id=245333363 instance=ExtResource("2_w0wvw")]
 layout_mode = 1
+script = ExtResource("4_w0d8s")
 
 [node name="Options" parent="." unique_id=56698853 instance=ExtResource("3_fswdd")]
 visible = false
@@ -28,9 +29,8 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[connection signal="hide_title_screen" from="TitleScreenMain" to="." method="_on_title_screen_main_hide_title_screen"]
-[connection signal="open_credits" from="TitleScreenMain" to="." method="_on_title_screen_main_open_credits"]
-[connection signal="open_options" from="TitleScreenMain" to="." method="_on_title_screen_main_open_options"]
-[connection signal="play_game" from="TitleScreenMain" to="." method="_on_title_screen_main_play_game"]
+[connection signal="open_credits" from="TitleScreenButtons" to="." method="_on_title_screen_main_open_credits"]
+[connection signal="open_options" from="TitleScreenButtons" to="." method="_on_title_screen_main_open_options"]
+[connection signal="play_game" from="TitleScreenButtons" to="." method="_on_title_screen_main_play_game"]
 [connection signal="close_options" from="Options" to="." method="_on_options_close_options"]
 [connection signal="close_credits" from="Credits" to="." method="_on_credits_close_credits"]

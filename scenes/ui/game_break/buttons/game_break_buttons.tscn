@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://djymboaf2e7jb"]
+
+[ext_resource type="Script" uid="uid://b5w168nh4o4f0" path="res://scenes/ui/game_break/buttons/game_break_buttons.gd" id="1_twngv"]
+[ext_resource type="Theme" uid="uid://cnuo8xc644x4m" path="res://scenes/ui/themes/base_theme.tres" id="2_jg3ns"]
+[ext_resource type="FontFile" uid="uid://cbsy1kd2n7qwv" path="res://assets/arcadeclassic/ARCADECLASSIC.TTF" id="2_vwlf7"]
+
+[node name="GameBreakButtons" type="Control" unique_id=245333363]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_twngv")
+
+[node name="TitleScreen" type="Label" parent="." unique_id=542676717]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -184.0
+offset_right = 190.0
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.75, 0.7375, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.12479999, 0.12479999, 0.48, 0.80784315)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_vwlf7")
+theme_override_font_sizes/font_size = 64
+text = "Game_Break"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttuns" type="VBoxContainer" parent="." unique_id=989932022]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -52.5
+offset_right = 110.11517
+offset_bottom = 132.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_jg3ns")
+theme_override_constants/separation = 7
+alignment = 1
+
+[node name="StartButton" type="Button" parent="Buttuns" unique_id=1851587246]
+layout_mode = 2
+size_flags_vertical = 3
+text = "CONTEXT_PLAY"
+
+[node name="Options" type="Button" parent="Buttuns" unique_id=309331637]
+layout_mode = 2
+size_flags_vertical = 3
+text = "CONTEXT_OPTIONS"
+
+[node name="Exit" type="Button" parent="Buttuns" unique_id=1888817348]
+layout_mode = 2
+size_flags_vertical = 3
+text = "CONTEXT_EXIT"
+
+[connection signal="pressed" from="Buttuns/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Buttuns/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Buttuns/Exit" to="." method="_on_exit_pressed"]

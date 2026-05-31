@@ -1,12 +1,9 @@
-class_name TitleScreen
+class_name TitleScreenButtons
 extends Control
 
 signal play_game
 signal open_options
 signal open_credits
-
-@warning_ignore("unused_signal")
-signal hide_title_screen
 
 @onready var title_screen: Label = $TitleScreen
 
