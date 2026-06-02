@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://87idw2b0dri5"]
+
+[ext_resource type="Texture2D" uid="uid://dqd1o0n1a50dw" path="res://assets/vanice_beach/background/background_sky.png" id="1_jlqr4"]
+[ext_resource type="Texture2D" uid="uid://dggitiskqk3lm" path="res://assets/vanice_beach/background/background_sand.png" id="2_jltim"]
+[ext_resource type="Texture2D" uid="uid://ba0airoa8x5eq" path="res://assets/vanice_beach/background/background_ocean.png" id="2_nfxge"]
+[ext_resource type="Texture2D" uid="uid://cfpsunspcv7k" path="res://assets/vanice_beach/background/background_clouds_medium.png" id="2_tqwy4"]
+[ext_resource type="Texture2D" uid="uid://csfkpc7oy733h" path="res://assets/vanice_beach/background/background_clouds_small.png" id="3_inv88"]
+
+[node name="VaniceBeach" type="Node2D" unique_id=22330025]
+
+[node name="Sky" type="Sprite2D" parent="." unique_id=336229703]
+scale = Vector2(1.6875, 1.7777778)
+texture = ExtResource("1_jlqr4")
+centered = false
+
+[node name="Sky2" type="Sprite2D" parent="." unique_id=811483255]
+scale = Vector2(1.6875, 1.7777778)
+texture = ExtResource("2_tqwy4")
+centered = false
+
+[node name="Sky3" type="Sprite2D" parent="." unique_id=1563162234]
+scale = Vector2(1.6875, 1.7777778)
+texture = ExtResource("3_inv88")
+centered = false
+
+[node name="Ocean" type="Sprite2D" parent="." unique_id=879833593]
+z_index = 3
+position = Vector2(0, -136)
+scale = Vector2(1.6875001, 4.502)
+texture = ExtResource("2_nfxge")
+centered = false
+
+[node name="Ground" type="Sprite2D" parent="." unique_id=621140646]
+z_index = 1
+position = Vector2(0, -282)
+scale = Vector2(1.6875, 6.8999996)
+texture = ExtResource("2_jltim")
+centered = false

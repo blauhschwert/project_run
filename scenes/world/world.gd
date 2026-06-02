@@ -5,7 +5,7 @@ signal change_game_score(amount)
 
 enum GameState {NONE, PLAY, BREAK, GAME_OVER}
 
-const STONE_SCENE : PackedScene = preload("res://scenes/stone/stone.tscn")
+const STONE_SCENE : PackedScene = preload("res://scenes/crab/crab.tscn")
 const UPGRADE_SCENE : PackedScene = preload("res://scenes/ui/upgrades/upgrades.tscn")
 
 var game_state := GameState.NONE

@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c1nr72tr1t4s"]
+
+[ext_resource type="Script" uid="uid://c3a6itgtdxir1" path="res://scenes/crab/crab.gd" id="1_a0rg0"]
+[ext_resource type="Texture2D" uid="uid://dc7njfx7jn61t" path="res://assets/vanice_beach/crab_idle.png" id="2_72p8v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mma1j"]
+atlas = ExtResource("2_72p8v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx0ly"]
+atlas = ExtResource("2_72p8v")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mncq"]
+atlas = ExtResource("2_72p8v")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrntl"]
+atlas = ExtResource("2_72p8v")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5lybg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mma1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx0ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mncq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrntl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uoq2b"]
+
+[node name="Crab" type="Area2D" unique_id=1396716879]
+script = ExtResource("1_a0rg0")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1524628096]
+position = Vector2(0, -5)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_5lybg")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.7624611
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=533753601]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_uoq2b")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1802796925]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
