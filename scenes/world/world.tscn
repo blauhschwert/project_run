@@ -125,8 +125,7 @@ position = Vector2(144, 1024)
 wait_time = 1.2
 autostart = true
 
-[node name="Stones" type="Node2D" parent="." unique_id=1922324885]
-z_index = 4
+[node name="Crabs" type="Node2D" parent="." unique_id=926233292]
 
 [connection signal="change_game_score" from="." to="GameUI/GameUI" method="_on_world_change_game_score"]
 [connection signal="change_lane" from="Player" to="." method="_on_player_change_lane"]

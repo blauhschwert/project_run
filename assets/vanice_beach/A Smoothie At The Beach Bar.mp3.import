@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dcbxkvusnxu2f"
+path="res://.godot/imported/A Smoothie At The Beach Bar.mp3-658ad16e4334aa5bfc602c9d323f3151.mp3str"
+
+[deps]
+
+source_file="res://assets/vanice_beach/A Smoothie At The Beach Bar.mp3"
+dest_files=["res://.godot/imported/A Smoothie At The Beach Bar.mp3-658ad16e4334aa5bfc602c9d323f3151.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

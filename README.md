@@ -41,5 +41,6 @@ font : https://www.dafont.com/arcade-classic-2.font
 wood shop : https://crusenho.itch.io/complete-ui-essential-pack
 
 music : https://tomfeldmann.itch.io/free-wild-music-pack
+beach music : https://honored-season.itch.io/a-smoothie-at-the-beach-bar
 
 crab : https://dustdfg.itch.io/animated-pixel-art-crab-enemy

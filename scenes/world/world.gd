@@ -5,7 +5,7 @@ signal change_game_score(amount)
 
 enum GameState {NONE, PLAY, BREAK, GAME_OVER}
 
-const STONE_SCENE : PackedScene = preload("res://scenes/crab/crab.tscn")
+const CRAB_SCENE : PackedScene = preload("res://scenes/crab/crab.tscn")
 const UPGRADE_SCENE : PackedScene = preload("res://scenes/ui/upgrades/upgrades.tscn")
 
 var game_state := GameState.NONE
@@ -56,10 +56,10 @@ func get_game_state() -> World.GameState:
 	return game_state
 
 func _create_stone_instance() -> void:
-	var stone = STONE_SCENE.instantiate()
-	stone.position = entity_spawn.position
-	stone.set_direction_vector(entity_spawn.position, $EntityEnds.get_child(randi() % 3).position)
-	$Stones.add_child(stone)
+	var crab = CRAB_SCENE.instantiate()
+	crab.position = entity_spawn.position
+	crab.set_direction_vector(entity_spawn.position, $EntityEnds.get_child(randi() % 3).position)
+	$Crabs.add_child(crab)
 
 func _increase_game_score(p_amount) -> void:
 	game_score += p_amount * game_speed
@@ -101,5 +101,5 @@ func _show_game_over_screen() -> void:
 	$GameOverScreen.show()
 
 func _set_stones_to_stop(p_is_moving) -> void:
-	for i in $Stones.get_children():
+	for i in $Crabs.get_children():
 		i.stop_stone(p_is_moving)

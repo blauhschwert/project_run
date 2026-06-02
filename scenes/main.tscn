@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://gtb3cx0pnyeo" path="res://scenes/ui/game_break/game_break.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dwcfsgxjmyuyd" path="res://scenes/ui/main_menu/option/options.tscn" id="4_tbgi4"]
 [ext_resource type="Script" uid="uid://dkccymoyherqt" path="res://scenes/ui/game_break/menu.gd" id="4_tefeu"]
-[ext_resource type="AudioStream" uid="uid://c3rlqbqjufne6" path="res://assets/new_grounds/MysticalForest1.wav" id="7_o6xl0"]
+[ext_resource type="AudioStream" uid="uid://dcbxkvusnxu2f" path="res://assets/vanice_beach/A Smoothie At The Beach Bar.mp3" id="7_o6xl0"]
 
 [node name="Main" type="Node" unique_id=1464486904]
 script = ExtResource("1_sugp2")
