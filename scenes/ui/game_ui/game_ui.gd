@@ -1,7 +1,7 @@
 class_name GameUI
 extends Control
 
-var game_score : int = 0
+var game_score : float = 0
 
 @onready var game_score_label : Label = $background/GameScore
 
@@ -12,10 +12,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	_update_game_score()
+	_update_game_score(_delta)
 
-func _update_game_score() -> void:
-	game_score_label.text = str(game_score).pad_zeros(7)
+func _update_game_score(_delta) -> void:
+	game_score_label.text = str(int(game_score * _delta)).pad_zeros(10)
 
 
 func _on_world_change_game_score(amount: Variant) -> void:

@@ -4,9 +4,9 @@ extends CharacterBody2D
 signal change_lane(lane:int)
 signal player_hit
 
-enum PlayerStates {PLAY, BREAK, GAME_OVER}
+enum PlayerStates {NONE,PLAY, BREAK, GAME_OVER}
 
-var play_state = PlayerStates.PLAY
+var play_state = PlayerStates.NONE
 var direction : Vector2 = Vector2.ZERO
 
 var lanes : Array = [-1, 0, 1]
@@ -21,7 +21,7 @@ var swipping = false
 var threshold = 10
 
 func _ready() -> void:
-	$AnimationPlayer.play("walk")
+	pass
 
 func _input(_event: InputEvent) -> void:
 	# INPUT
@@ -64,6 +64,9 @@ func _input(_event: InputEvent) -> void:
 
 func _physics_process(_delta: float) -> void:
 	match play_state:
+		PlayerStates.NONE:
+			$AnimationPlayer.pause()
+			set_process_input(false)
 		PlayerStates.PLAY:
 			set_process_input(true)
 			$AnimationPlayer.play("walk")

@@ -19,14 +19,20 @@ func _process(delta: float) -> void:
 	
 	var tween : Tween = get_tree().create_tween()
 	tween.tween_property(self,"scale",Vector2(5.0,5.0),3.0 * speed).set_ease(Tween.EASE_IN_OUT)
-	
+
+func stop_stone(p_stoping) -> void:
+	if !p_stoping:
+		speed = 0.0
+	else:
+		speed = 0.74
+
 
 func set_direction_vector(p_str_pt := Vector2.ZERO,p_end_pt := Vector2.ZERO) -> void:
 	direction = p_end_pt - p_str_pt
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
-
+	Global.add_stone()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:

@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://n40rysagmwss" path="res://scenes/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://m82q0ileap0m" path="res://scenes/world/world.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://gtb3cx0pnyeo" path="res://scenes/ui/game_break/game_break.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dwcfsgxjmyuyd" path="res://scenes/ui/main_menu/option/options.tscn" id="4_tbgi4"]
+[ext_resource type="Script" uid="uid://dkccymoyherqt" path="res://scenes/ui/game_break/menu.gd" id="4_tefeu"]
 
 [node name="Main" type="Node" unique_id=1464486904]
 script = ExtResource("1_sugp2")
@@ -12,12 +14,23 @@ script = ExtResource("1_sugp2")
 
 [node name="GameBreakLayer" parent="." unique_id=383028189 instance=ExtResource("3_jyhfs")]
 layer = 2
+visible = false
+
+[node name="Menu" parent="GameBreakLayer" index="0" unique_id=1597644313]
+script = ExtResource("4_tefeu")
+
+[node name="Options" parent="GameBreakLayer/Menu/VBoxContainer" parent_id_path=PackedInt32Array(383028189, 212916302) index="1" unique_id=56698853 instance=ExtResource("4_tbgi4")]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="World" parent="." unique_id=1211907454 instance=ExtResource("2_0wfyh")]
 modulate = Color(1, 1, 1, 0.7921569)
 
 [connection signal="game_started" from="MainMenu/MainMenu" to="." method="_on_main_menu_game_started"]
+[connection signal="open_options" from="GameBreakLayer/Menu/VBoxContainer/GameBreakButtons" to="GameBreakLayer/Menu" method="_on_game_break_buttons_open_options"]
 [connection signal="pressed" from="GameBreakLayer/Menu/VBoxContainer/GameBreakButtons/Buttuns/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="close_options" from="GameBreakLayer/Menu/VBoxContainer/Options" to="GameBreakLayer/Menu" method="_on_options_close_options"]
 
 [editable path="MainMenu"]
 [editable path="GameBreakLayer"]

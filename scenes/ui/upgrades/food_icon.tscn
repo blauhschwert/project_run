@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bgbwm3mw82vni"]
+
+[ext_resource type="Texture2D" uid="uid://bxoa8egx5ab0i" path="res://assets/Food.png" id="1_cpyha"]
+[ext_resource type="Script" uid="uid://5xvp66m0q8ma" path="res://scenes/ui/upgrades/food_icon.gd" id="2_fi61u"]
+
+[node name="FoodIcon" type="Sprite2D" unique_id=1978897956]
+texture = ExtResource("1_cpyha")
+hframes = 8
+vframes = 8
+script = ExtResource("2_fi61u")
