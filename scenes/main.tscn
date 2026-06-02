@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://gtb3cx0pnyeo" path="res://scenes/ui/game_break/game_break.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dwcfsgxjmyuyd" path="res://scenes/ui/main_menu/option/options.tscn" id="4_tbgi4"]
 [ext_resource type="Script" uid="uid://dkccymoyherqt" path="res://scenes/ui/game_break/menu.gd" id="4_tefeu"]
+[ext_resource type="AudioStream" uid="uid://c3rlqbqjufne6" path="res://assets/new_grounds/MysticalForest1.wav" id="7_o6xl0"]
 
 [node name="Main" type="Node" unique_id=1464486904]
 script = ExtResource("1_sugp2")
@@ -26,6 +27,11 @@ size_flags_vertical = 3
 
 [node name="World" parent="." unique_id=1211907454 instance=ExtResource("2_0wfyh")]
 modulate = Color(1, 1, 1, 0.7921569)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=410269104]
+stream = ExtResource("7_o6xl0")
+autoplay = true
+bus = &"Music"
 
 [connection signal="game_started" from="MainMenu/MainMenu" to="." method="_on_main_menu_game_started"]
 [connection signal="open_options" from="GameBreakLayer/Menu/VBoxContainer/GameBreakButtons" to="GameBreakLayer/Menu" method="_on_game_break_buttons_open_options"]

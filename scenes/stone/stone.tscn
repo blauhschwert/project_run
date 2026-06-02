@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://drc5p6nh37efe"]
 
 [ext_resource type="Script" uid="uid://chgpha0j6hu2j" path="res://scenes/stone/stone.gd" id="1_47p22"]
-[ext_resource type="Texture2D" uid="uid://buk2ty1ydh33a" path="res://assets/Stone.png" id="1_uoq2b"]
+[ext_resource type="Texture2D" uid="uid://buk2ty1ydh33a" path="res://assets/new_grounds/Stone.png" id="1_uoq2b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uoq2b"]
 

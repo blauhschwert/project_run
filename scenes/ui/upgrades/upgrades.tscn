@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://llyrqkrfgeep"]
 
-[ext_resource type="Texture2D" uid="uid://du7y5dytkhr8p" path="res://assets/UI_Wood_Banner_Downward_01.png" id="1_cs8ac"]
+[ext_resource type="Texture2D" uid="uid://du7y5dytkhr8p" path="res://assets/new_grounds/UI_Wood_Banner_Downward_01.png" id="1_cs8ac"]
 [ext_resource type="Script" uid="uid://dy1u5ildnm2jl" path="res://scenes/ui/upgrades/upgrades.gd" id="1_eipso"]
 [ext_resource type="PackedScene" uid="uid://bgbwm3mw82vni" path="res://scenes/ui/upgrades/food_icon.tscn" id="3_eipso"]
 [ext_resource type="FontFile" uid="uid://cbsy1kd2n7qwv" path="res://assets/arcadeclassic/ARCADECLASSIC.TTF" id="4_xi0p4"]
