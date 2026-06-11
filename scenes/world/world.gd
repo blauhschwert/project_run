@@ -12,14 +12,17 @@ var game_state := GameState.NONE
 var game_score : int = 0
 var current_game_bonus : int = 15
 var game_speed : float = 1.0
+var current_world : String = "VaniceBeach"
+var worlds : Array[String] = [
+	"VaniceBeach",
+	"HighLands"
+]
 
-var upgrades := []
+var delta_obstacles = 3
 
 @onready var entity_spawn: Marker2D = $EntitySpawn
 @onready var lane_positions: Node2D = $LanePositions
 @onready var player: Player = $Player
-@onready var upgrade_options: VBoxContainer = $Upgrades/UpgradeOptions
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -43,10 +46,12 @@ func _process(_delta: float) -> void:
 		GameState.GAME_OVER:
 			_show_game_over_screen()
 	
-	if Global.get_stones() == 3:
-		_create_upgrade_slot()
-		Global.clear_stone_counter()
-		player.chnage_play_state(Player.PlayerStates.BREAK)
+	if Global.get_obstacle() == delta_obstacles:
+		Global.clear_obstacle_counter()
+		current_game_bonus *= 2.71
+		player.change_worlds()
+		delta_obstacles += 2
+		Global.clear_obstacle_counter()
 
 
 func change_game_state(p_state := GameState.NONE) -> void:
@@ -73,20 +78,6 @@ func _on_entity_timer_timeout() -> void:
 	_create_stone_instance()
 	$EntityTimer.start(randf_range(1.2, 2.9))
 
-func _create_upgrade_slot() -> void:
-	var upgrade_opt = UPGRADE_SCENE.instantiate()
-	upgrade_options.add_child(upgrade_opt)
-	upgrade_opt.connect("finished_upgrade",_increase_game_bonus)
-	upgrades.append(upgrade_opt)
-	get_tree().paused = true
-	$Upgrades.show()
-
-func _increase_game_bonus(next_bonus : int) -> void:
-	print("upgrade")
-	current_game_bonus += next_bonus
-	get_tree().paused = false
-	$Upgrades/UpgradeOptions.remove_child(upgrades[0])
-
 func _on_player_player_hit() -> void:
 	game_state = GameState.GAME_OVER
 
@@ -103,3 +94,13 @@ func _show_game_over_screen() -> void:
 func _set_stones_to_stop(p_is_moving) -> void:
 	for i in $Crabs.get_children():
 		i.stop_stone(p_is_moving)
+
+func _on_player_entered_portal() -> void:
+	current_world = worlds.pick_random()
+	match current_world:
+		"VaniceBeach":
+			$HighLands.hide()
+			$VaniceBeach.show()
+		"HighLands":
+			$VaniceBeach.hide()
+			$HighLands.show()

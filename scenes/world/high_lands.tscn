@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bf36bkkvxjp0p"]
+
+[ext_resource type="Texture2D" uid="uid://bvcfw543xaob7" path="res://assets/new_grounds/PlainA.png" id="1_lsjnm"]
+
+[node name="HighLands" type="Node2D" unique_id=1067534362]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=479148387]
+scale = Vector2(0.9, 2)
+texture = ExtResource("1_lsjnm")
+centered = false

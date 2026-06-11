@@ -1,12 +1,12 @@
 extends Node
 
-var finished_stones : int = 0
+var finished_obstacles : int = 0
 
-func add_stone() -> void:
-	finished_stones += 1
+func add_obstacles() -> void:
+	finished_obstacles += 1
 
-func get_stones() -> int:
-	return finished_stones
+func get_obstacle() -> int:
+	return finished_obstacles
 
-func clear_stone_counter() -> void:
-	finished_stones = 0
+func clear_obstacle_counter() -> void:
+	finished_obstacles = 0

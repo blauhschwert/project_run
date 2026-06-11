@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="project_run"
+config/name="beetweenWorlds"
 run/main_scene="uid://duocpgia0bd0x"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://ccorpii0o0w1j"
 
 [audio]
 

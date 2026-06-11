@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 signal change_lane(lane:int)
 signal player_hit
+signal entered_portal
 
 enum PlayerStates {NONE,PLAY, BREAK, GAME_OVER}
 
@@ -21,7 +22,7 @@ var swipping = false
 var threshold = 10
 
 func _ready() -> void:
-	pass
+	$Portal.hide()
 
 func _input(_event: InputEvent) -> void:
 	# INPUT
@@ -77,6 +78,10 @@ func _physics_process(_delta: float) -> void:
 
 func chnage_play_state(p_state : PlayerStates) -> void:
 	play_state = p_state
+
+func change_worlds() -> void:
+	$AnimationPlayer.play("change_worlds")
+	entered_portal.emit()
 
 func _player_break() -> void:
 	set_process_input(false)

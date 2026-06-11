@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://yhtvjm73m2va" path="res://assets/new_grounds/character_11_frame32x32.png" id="1_8afob"]
 [ext_resource type="Script" uid="uid://dplgkt8u1i27t" path="res://scenes/player/player.gd" id="1_dovo2"]
+[ext_resource type="Texture2D" uid="uid://ccorpii0o0w1j" path="res://assets/beetweenWorlds/hole_zero.png" id="3_gmlin"]
 
 [sub_resource type="Animation" id="Animation_dovo2"]
 length = 0.6
@@ -17,6 +18,57 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Portal:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_lvxji"]
+resource_name = "change_worlds"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.47476336),
+"transitions": PackedFloat32Array(-0.5, -0.5),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, -19)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Portal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_gmlin"]
@@ -39,6 +91,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lvxji"]
 _data = {
 &"RESET": SubResource("Animation_dovo2"),
+&"change_worlds": SubResource("Animation_lvxji"),
 &"walk": SubResource("Animation_gmlin")
 }
 
@@ -48,6 +101,7 @@ _data = {
 script = ExtResource("1_dovo2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1916161242]
+z_index = 1
 texture = ExtResource("1_8afob")
 hframes = 3
 region_enabled = true
@@ -59,3 +113,7 @@ autoplay = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1849207537]
 shape = SubResource("CircleShape2D_gmlin")
+
+[node name="Portal" type="Sprite2D" parent="." unique_id=265529604]
+position = Vector2(1, -21)
+texture = ExtResource("3_gmlin")
