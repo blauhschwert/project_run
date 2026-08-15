@@ -4,7 +4,7 @@ A simple endless runner game example built with Godot.
 
 =====
 
-<center><b><i>"On my social media profiles, I am a "Tsuna" or Sun God Nika[xyz]. In my mind, I am a little bit confused. But in my heart, I am a nerd that works for living to get again to the cinema and show those that needs us how to care for them"</i></b></center>
+<center><b><i>"Once opon a time in a forest that one favor for them that was granted, just to ask where y destination lies"</i></b></center>
 
 =====
 
